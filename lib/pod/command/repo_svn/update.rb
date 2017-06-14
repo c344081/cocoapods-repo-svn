@@ -58,8 +58,8 @@ module Pod
             UI.section "Updating spec repo `#{source.name}`" do
               Dir.chdir(source.repo) do
                 begin
-                  #output = svn('up --non-interactive --trust-server-cert')
-                  output = `svn up --non-interactive --trust-server-cert`
+                  #output = svn('up')
+                  output = `svn up`
                   UI.puts output if show_output && !config.verbose?
                 rescue Informative => e
                   UI.warn 'CocoaPods was not able to update the ' \

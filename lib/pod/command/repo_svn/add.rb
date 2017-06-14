@@ -30,7 +30,7 @@ module Pod
           UI.section("Checking out spec-repo `#{@name}` from `#{@url}` using svn") do
             config.repos_dir.mkpath
             Dir.chdir(config.repos_dir) do
-              command = "checkout --non-interactive --trust-server-cert '#{@url}' #{@name}"
+              command = "checkout '#{@url}' #{@name}"
               #!svn(command)
               `svn #{command}`
             end
